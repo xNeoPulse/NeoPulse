@@ -19,8 +19,8 @@
 
 return {
 	["UniverseIDs"] = {
-		[2239430935] = "";
-		[7703614594] = "";
+		[2239430935] = "https://raw.githubusercontent.com/xNeoPulse/NeoPulse/refs/heads/main/Games/2239430935.lua";
+		[7703614594] = "https://raw.githubusercontent.com/xNeoPulse/NeoPulse/refs/heads/main/Games/7703614594.lua";
 	};
 	["PlaceIDs"] = {
 	};
