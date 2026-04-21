@@ -17,7 +17,7 @@
                                                                                          
 --]]
 
-local Games = loadstring(game:HttpGet("https://github.com/xNeoPulse/NeoPulse/edit/main/Games.lua"))();
+local Games = loadstring(game:HttpGet("https://raw.githubusercontent.com/xNeoPulse/NeoPulse/refs/heads/main/Games.lua"))();
 local UniverseID = game:GetService("HttpService"):JSONDecode(game:HttpGet("https://apis.roblox.com/universes/v1/places/".. game.PlaceId .."/universe")).universeId;
 
 if Games["UniverseIDs"][UniverseID] then
