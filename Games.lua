@@ -1,0 +1,6 @@
+return {
+	["UniverseIDs"] = {
+	};
+	["PlaceIDs"] = {
+	};
+}
