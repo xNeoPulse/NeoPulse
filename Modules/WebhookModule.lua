@@ -97,7 +97,7 @@ do
 		local request = http_request or request or HttpPost or syn.request or http.request
 		local hook = { Url = url; Body = tostring(self); Method = "POST"; Headers = headers }
 		--warn("Sending webhook notification...")
-		return pcall(request(hook))
+		request(hook)
 	end
 end
 
