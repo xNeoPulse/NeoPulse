@@ -40,9 +40,8 @@ do
   -- ═══════════════════════════════════════════════════════════════
 	function Webhook:Append(text)
 		local temp = self["content"] .. text
-		if #temp > 2000 then
-			warn('Message body cannot exceed 2000 characters')
-			return
+		if #temp > 2000 then 
+			return "Message body cannot exceed 2000 characters"
 		end
 		self["content"] = temp
 	end
@@ -78,8 +77,8 @@ do
 
 		local request = http_request or request or HttpPost or syn.request or http.request
 		local hook = { Url = url; Body = tostring(self); Method = "POST"; Headers = headers }
-		warn("Sending webhook notification...")
-		request(hook)
+		--warn("Sending webhook notification...")
+		return pcall(request(hook))
 	end
 end
 
@@ -150,8 +149,7 @@ do
   -- ═══════════════════════════════════════════════════════════════
 	function Embed:SetTitle(title)
 		if #title > 256 then
-			warn('Title cannot exceed 256 characters')
-			return
+			return "Title cannot exceed 256 characters"
 		end
 		self["title"] = title
 	end
@@ -159,8 +157,7 @@ do
 	function Embed:Append(text)
 		local temp = self["description"] .. text
 		if #temp > 2048 then
-			warn('Append description cannot exceed 2048 characters')
-			return
+			return "Append description cannot exceed 2048 characters"
 		end
 		self["description"] = temp
 	end
@@ -200,8 +197,7 @@ do
 	function Embed:AppendFooter(text)
 		local temp = self["footer"]["text"] .. text
 		if #temp > 2048 then
-			warn('Append footer cannot exceed 2048 characters')
-			return
+			return "Append footer cannot exceed 2048 characters"
 		end
 		self["footer"]["text"] = temp
 	end
@@ -224,7 +220,7 @@ do
 
 	function Embed:SetAuthorName(name)
 		if #name > 256 then
-			warn('Author name cannot exceed 256 characters')
+			return "Author name cannot exceed 256 characters"
 		end
 		self["author"]["name"] = name
 	end
@@ -276,8 +272,7 @@ do
   -- ═══════════════════════════════════════════════════════════════
 	function Field:SetName(name)
 		if #name > 256 then
-			warn('Name must not exceed 256 characters')
-			return
+			return "Name must not exceed 256 characters"
 		end
 		self["name"] = name
 	end
@@ -285,8 +280,7 @@ do
 	function Field:Append(text)
 		local temp = self["value"] .. text
 		if #temp > 1024 then
-			warn('Field content cannot exceed 1024 characters')
-			return
+			return "Field content cannot exceed 1024 characters"
 		end
 		self["value"] = temp
 	end
